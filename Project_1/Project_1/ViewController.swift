@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var displays: [UIView]!
     
-    let displayNumber = 700
+    let displayNumber = 420
     let onAlpha = 1.0
     let offAlpha = 0.2
     
@@ -47,11 +47,8 @@ class ViewController: UIViewController {
         for display in displays {
             var i = 0
             for segment in display.subviews {
-                if numberSegments[displayNumberDigits[numDisplay]][i] == 1 {
-                    segment.alpha = onAlpha
-                } else {
-                    segment.alpha = offAlpha
-                }
+                let isOn = numberSegments[displayNumberDigits[numDisplay]][i] == 1
+                segment.alpha = isOn ? onAlpha : offAlpha
                     
                 i += 1
             }
@@ -60,4 +57,3 @@ class ViewController: UIViewController {
     }
 
 }
-
