@@ -31,6 +31,8 @@ class BaseReusableView: UIView {
         let bundle = Bundle(for: BaseReusableView.self)
         bundle.loadNibNamed(nibName, owner: self, options: nil)
         
+        guard let contentView = contentView else {fatalError("ontentView not set")}
+        
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +15,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view alpha="0.69999999999999996" contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -26,13 +25,13 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcs-Fk-Ooz">
                             <rect key="frame" x="3.5" y="0.0" width="37" height="50.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="A B C D" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xze-DF-Dtq">
                             <rect key="frame" x="0.0" y="50.5" width="44.5" height="14.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -41,21 +40,33 @@
                         <constraint firstItem="kcs-Fk-Ooz" firstAttribute="centerX" secondItem="hly-kG-0xG" secondAttribute="centerX" id="dmL-54-1qM"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHd-ku-Zqv">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                    <connections>
+                        <action selector="highlightButtonTouchDown" destination="-1" eventType="touchDown" id="UXW-o3-TgN"/>
+                        <action selector="highlightButtonTouchUpInside" destination="-1" eventType="touchUpInside" id="pZl-Vs-iQx"/>
+                        <action selector="highlightButtonTouchUpOutside" destination="-1" eventType="touchUpOutside" id="g1f-Re-XgH"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" button="YES"/>
+            </accessibility>
             <constraints>
+                <constraint firstItem="zHd-ku-Zqv" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="8DN-m4-yTE"/>
                 <constraint firstItem="hly-kG-0xG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Bta-If-ZMx"/>
+                <constraint firstItem="zHd-ku-Zqv" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="NS2-rd-TO2"/>
                 <constraint firstItem="hly-kG-0xG" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.65" id="Ooe-7F-8fG"/>
+                <constraint firstItem="zHd-ku-Zqv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dHl-rL-ltr"/>
+                <constraint firstItem="zHd-ku-Zqv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="n4O-89-osN"/>
                 <constraint firstItem="hly-kG-0xG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rjs-wr-h0s"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="99"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
