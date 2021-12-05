@@ -31,7 +31,12 @@ class DigitButton: BaseReusableView {
     }
     
     func animate(animation animFunc: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.15, animations: animFunc)
+        UIView.animate(
+            withDuration: 0.25,
+            delay: 0,
+            options: .allowUserInteraction,
+            animations: animFunc
+        )
     }
     
     @IBAction func highlightButtonTouchDown() {
