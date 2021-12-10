@@ -49,12 +49,12 @@ class MainVC: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         for dot in dots {
             dot.layer.cornerRadius = dot.frame.height / 2
         }
-        
-        for button in buttons { button.viewDidAppear() }
     }
     
     // animate

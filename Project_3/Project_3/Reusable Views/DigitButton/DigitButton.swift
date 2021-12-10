@@ -19,12 +19,16 @@ class DigitButton: BaseReusableView {
     weak var delegate: DigitButtonDelegate?
     
     override func setup() {
+        super.setup()
+        
         layer.borderWidth = 1
         layer.borderColor = UIColor.white.cgColor
         backgroundColor = .white.withAlphaComponent(0)
     }
     
-    func viewDidAppear() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         numberLabel.font = numberLabel.font.withSize(contentView.frame.height / 2)
         alphabetLabel.font = alphabetLabel.font.withSize(contentView.frame.height / 8)
         layer.cornerRadius = frame.height / 2
