@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ijl-L1-2ZW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts-->
+        <scene sceneID="rdD-2g-cfx">
+            <objects>
+                <viewController id="Fap-cQ-yPo" customClass="MainTableViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G6n-ik-hBI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ekH-OL-uFR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TMj-pK-PfQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ekH-OL-uFR" secondAttribute="bottom" id="9Js-wO-w7k"/>
+                            <constraint firstItem="ekH-OL-uFR" firstAttribute="top" secondItem="G6n-ik-hBI" secondAttribute="top" id="GER-Cp-Txx"/>
+                            <constraint firstItem="ekH-OL-uFR" firstAttribute="leading" secondItem="G6n-ik-hBI" secondAttribute="leading" id="nvN-4h-Pke"/>
+                            <constraint firstAttribute="trailing" secondItem="ekH-OL-uFR" secondAttribute="trailing" id="sd5-RN-uVm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="qFK-yf-lyD">
+                        <barButtonItem key="leftBarButtonItem" title="Favorites" image="star" catalog="system" id="I2G-33-Ehz" userLabel="Favorites">
+                            <connections>
+                                <action selector="showFavorites" destination="Fap-cQ-yPo" id="V4b-ns-TUE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="upD-86-BvV" userLabel="Add">
+                            <connections>
+                                <action selector="handleAdd" destination="Fap-cQ-yPo" id="hP8-wY-4Vq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favoritesButton" destination="I2G-33-Ehz" id="S1x-ok-xqy"/>
+                        <outlet property="tableView" destination="ekH-OL-uFR" id="yve-SD-FDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UME-CX-DXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="-725"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LEo-xh-dzV">
+            <objects>
+                <navigationController id="Ijl-L1-2ZW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mol-Uc-7Nx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Fap-cQ-yPo" kind="relationship" relationship="rootViewController" id="bKq-ub-oNs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="57N-Ze-QmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-730" y="-725"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
