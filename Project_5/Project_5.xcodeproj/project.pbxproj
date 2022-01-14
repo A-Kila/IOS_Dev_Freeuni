@@ -14,6 +14,11 @@
 		A507CDE72790242500D3F8CA /* Project_5.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A507CDE52790242500D3F8CA /* Project_5.xcdatamodeld */; };
 		A507CDE92790242600D3F8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A507CDE82790242600D3F8CA /* Assets.xcassets */; };
 		A507CDEC2790242600D3F8CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A507CDEA2790242600D3F8CA /* LaunchScreen.storyboard */; };
+		A507CDF6279025DE00D3F8CA /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507CDF4279025DE00D3F8CA /* CustomCell.swift */; };
+		A507CDF7279025DE00D3F8CA /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A507CDF5279025DE00D3F8CA /* CustomCell.xib */; };
+		A558511C27918301007ED650 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558511B27918301007ED650 /* DBManager.swift */; };
+		A558512C27919BD2007ED650 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558512A27919BD2007ED650 /* Contact+CoreDataClass.swift */; };
+		A558512D27919BD2007ED650 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558512B27919BD2007ED650 /* Contact+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		A507CDE82790242600D3F8CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A507CDEB2790242600D3F8CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A507CDED2790242600D3F8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A507CDF4279025DE00D3F8CA /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		A507CDF5279025DE00D3F8CA /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		A558511B27918301007ED650 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		A558512A27919BD2007ED650 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A558512B27919BD2007ED650 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,9 @@
 		A507CDDB2790242500D3F8CA /* Project_5 */ = {
 			isa = PBXGroup;
 			children = (
+				A558511D2791851C007ED650 /* Enteties */,
+				A558511A279182DE007ED650 /* DB */,
+				A507CDF32790259500D3F8CA /* Cells */,
 				A507CDDC2790242500D3F8CA /* AppDelegate.swift */,
 				A507CDDE2790242500D3F8CA /* SceneDelegate.swift */,
 				A507CDE02790242500D3F8CA /* ViewController.swift */,
@@ -68,6 +81,32 @@
 				A507CDE52790242500D3F8CA /* Project_5.xcdatamodeld */,
 			);
 			path = Project_5;
+			sourceTree = "<group>";
+		};
+		A507CDF32790259500D3F8CA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A507CDF4279025DE00D3F8CA /* CustomCell.swift */,
+				A507CDF5279025DE00D3F8CA /* CustomCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A558511A279182DE007ED650 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				A558511B27918301007ED650 /* DBManager.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		A558511D2791851C007ED650 /* Enteties */ = {
+			isa = PBXGroup;
+			children = (
+				A558512A27919BD2007ED650 /* Contact+CoreDataClass.swift */,
+				A558512B27919BD2007ED650 /* Contact+CoreDataProperties.swift */,
+			);
+			path = Enteties;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +169,7 @@
 			files = (
 				A507CDEC2790242600D3F8CA /* LaunchScreen.storyboard in Resources */,
 				A507CDE92790242600D3F8CA /* Assets.xcassets in Resources */,
+				A507CDF7279025DE00D3F8CA /* CustomCell.xib in Resources */,
 				A507CDE42790242500D3F8CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +182,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A507CDE12790242500D3F8CA /* ViewController.swift in Sources */,
+				A558512C27919BD2007ED650 /* Contact+CoreDataClass.swift in Sources */,
+				A558511C27918301007ED650 /* DBManager.swift in Sources */,
 				A507CDE72790242500D3F8CA /* Project_5.xcdatamodeld in Sources */,
+				A558512D27919BD2007ED650 /* Contact+CoreDataProperties.swift in Sources */,
+				A507CDF6279025DE00D3F8CA /* CustomCell.swift in Sources */,
 				A507CDDD2790242500D3F8CA /* AppDelegate.swift in Sources */,
 				A507CDDF2790242500D3F8CA /* SceneDelegate.swift in Sources */,
 			);
@@ -293,6 +337,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56Y8C28RB4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Project_5/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -320,6 +365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56Y8C28RB4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Project_5/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
