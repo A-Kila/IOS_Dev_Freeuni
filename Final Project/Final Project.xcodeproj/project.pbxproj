@@ -13,8 +13,13 @@
 		A5FDBA3327B93F0B00D491BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FDBA3127B93F0B00D491BB /* Main.storyboard */; };
 		A5FDBA3627B93F0B00D491BB /* Final_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5FDBA3427B93F0B00D491BB /* Final_Project.xcdatamodeld */; };
 		A5FDBA3B27B93F0D00D491BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FDBA3927B93F0D00D491BB /* LaunchScreen.storyboard */; };
-		A5FDBA4327B9412100D491BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FDBA4227B9412100D491BB /* Assets.xcassets */; };
 		A5FDBA4627B95FCB00D491BB /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FDBA4527B95FCB00D491BB /* ForecastViewController.swift */; };
+		A5FDBA4927B96B4800D491BB /* BaseReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FDBA4827B96B4800D491BB /* BaseReusableView.swift */; };
+		A5FDBA4C27B9722C00D491BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FDBA4B27B9722C00D491BB /* Assets.xcassets */; };
+		A5FDBA4E27B973D800D491BB /* ColorfulLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5FDBA4D27B973D800D491BB /* ColorfulLineView.xib */; };
+		A5FDBA5027B9760000D491BB /* ColorfulLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FDBA4F27B9760000D491BB /* ColorfulLineView.swift */; };
+		A5FDBA5427B97AE300D491BB /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FDBA5227B97AE300D491BB /* ForecastCell.swift */; };
+		A5FDBA5727B9873C00D491BB /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5FDBA5627B9873C00D491BB /* ForecastCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +31,13 @@
 		A5FDBA3527B93F0B00D491BB /* Final_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Final_Project.xcdatamodel; sourceTree = "<group>"; };
 		A5FDBA3A27B93F0D00D491BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5FDBA3C27B93F0D00D491BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5FDBA4227B9412100D491BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
 		A5FDBA4527B95FCB00D491BB /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		A5FDBA4827B96B4800D491BB /* BaseReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReusableView.swift; sourceTree = "<group>"; };
+		A5FDBA4B27B9722C00D491BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5FDBA4D27B973D800D491BB /* ColorfulLineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorfulLineView.xib; sourceTree = "<group>"; };
+		A5FDBA4F27B9760000D491BB /* ColorfulLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulLineView.swift; sourceTree = "<group>"; };
+		A5FDBA5227B97AE300D491BB /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		A5FDBA5627B9873C00D491BB /* ForecastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +70,16 @@
 		A5FDBA2A27B93F0B00D491BB /* Final Project */ = {
 			isa = PBXGroup;
 			children = (
+				A5FDBA4727B96B2F00D491BB /* ReusableViews */,
+				A5FDBA5127B97A6300D491BB /* Cell */,
 				A5FDBA4427B95F8F00D491BB /* ViewControllers */,
 				A5FDBA2B27B93F0B00D491BB /* AppDelegate.swift */,
 				A5FDBA2D27B93F0B00D491BB /* SceneDelegate.swift */,
 				A5FDBA3127B93F0B00D491BB /* Main.storyboard */,
-				A5FDBA4227B9412100D491BB /* Assets.xcassets */,
 				A5FDBA3927B93F0D00D491BB /* LaunchScreen.storyboard */,
 				A5FDBA3C27B93F0D00D491BB /* Info.plist */,
 				A5FDBA3427B93F0B00D491BB /* Final_Project.xcdatamodeld */,
+				A5FDBA4B27B9722C00D491BB /* Assets.xcassets */,
 			);
 			path = "Final Project";
 			sourceTree = "<group>";
@@ -79,6 +91,33 @@
 				A5FDBA4527B95FCB00D491BB /* ForecastViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A5FDBA4727B96B2F00D491BB /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5FDBA4A27B96FB900D491BB /* ColorfulLine */,
+				A5FDBA4827B96B4800D491BB /* BaseReusableView.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		A5FDBA4A27B96FB900D491BB /* ColorfulLine */ = {
+			isa = PBXGroup;
+			children = (
+				A5FDBA4D27B973D800D491BB /* ColorfulLineView.xib */,
+				A5FDBA4F27B9760000D491BB /* ColorfulLineView.swift */,
+			);
+			path = ColorfulLine;
+			sourceTree = "<group>";
+		};
+		A5FDBA5127B97A6300D491BB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A5FDBA5627B9873C00D491BB /* ForecastCell.xib */,
+				A5FDBA5227B97AE300D491BB /* ForecastCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FDBA3B27B93F0D00D491BB /* LaunchScreen.storyboard in Resources */,
-				A5FDBA4327B9412100D491BB /* Assets.xcassets in Resources */,
+				A5FDBA4C27B9722C00D491BB /* Assets.xcassets in Resources */,
+				A5FDBA5727B9873C00D491BB /* ForecastCell.xib in Resources */,
+				A5FDBA4E27B973D800D491BB /* ColorfulLineView.xib in Resources */,
 				A5FDBA3327B93F0B00D491BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,8 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FDBA5027B9760000D491BB /* ColorfulLineView.swift in Sources */,
+				A5FDBA4927B96B4800D491BB /* BaseReusableView.swift in Sources */,
 				A5FDBA3027B93F0B00D491BB /* TodayViewController.swift in Sources */,
 				A5FDBA2C27B93F0B00D491BB /* AppDelegate.swift in Sources */,
+				A5FDBA5427B97AE300D491BB /* ForecastCell.swift in Sources */,
 				A5FDBA4627B95FCB00D491BB /* ForecastViewController.swift in Sources */,
 				A5FDBA3627B93F0B00D491BB /* Final_Project.xcdatamodeld in Sources */,
 				A5FDBA2E27B93F0B00D491BB /* SceneDelegate.swift in Sources */,

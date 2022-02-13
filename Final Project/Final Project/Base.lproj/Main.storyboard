@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,11 +68,25 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Today View Controller" customClass="ViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="YZn-xd-5VH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YW-kB-tXM" customClass="ColorfulLineView" customModule="Final_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="2"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="lKn-LB-J49"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hy1-y6-xYK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4YW-kB-tXM" firstAttribute="top" secondItem="Hy1-y6-xYK" secondAttribute="top" id="IOr-6P-i5O"/>
+                            <constraint firstItem="Hy1-y6-xYK" firstAttribute="trailing" secondItem="4YW-kB-tXM" secondAttribute="trailing" id="K8p-wg-itf"/>
+                            <constraint firstItem="4YW-kB-tXM" firstAttribute="leading" secondItem="Hy1-y6-xYK" secondAttribute="leading" id="dbB-cI-zpL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Today" id="Esw-ku-BmS">
                         <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" landscapeImage="arrow.clockwise" id="8QX-wF-8Rf" userLabel="Refresh"/>
@@ -85,16 +100,41 @@
         <!--Forecast View Controller-->
         <scene sceneID="reD-Nr-5Gy">
             <objects>
-                <viewController id="PCW-AY-eKC" userLabel="Forecast View Controller" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QZN-qh-D6B">
+                <viewController id="PCW-AY-eKC" userLabel="Forecast View Controller" customClass="ForecastViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ePf-9a-PT2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="68O-rY-RWy"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0V-LN-0qS" customClass="ColorfulLineView" customModule="Final_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="2"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="1MT-fC-JXR"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="AnO-hk-5kB">
+                                <rect key="frame" x="0.0" y="90" width="414" height="723"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q7g-Pw-fh6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q7g-Pw-fh6" firstAttribute="trailing" secondItem="L0V-LN-0qS" secondAttribute="trailing" id="3Pg-M0-BrF"/>
+                            <constraint firstItem="AnO-hk-5kB" firstAttribute="top" secondItem="L0V-LN-0qS" secondAttribute="bottom" id="7SN-kl-Sdn"/>
+                            <constraint firstItem="q7g-Pw-fh6" firstAttribute="trailing" secondItem="AnO-hk-5kB" secondAttribute="trailing" id="D2L-Uu-aAh"/>
+                            <constraint firstItem="L0V-LN-0qS" firstAttribute="top" secondItem="q7g-Pw-fh6" secondAttribute="top" id="EZX-7D-EKw"/>
+                            <constraint firstItem="L0V-LN-0qS" firstAttribute="leading" secondItem="q7g-Pw-fh6" secondAttribute="leading" id="Owf-LS-Ndi"/>
+                            <constraint firstItem="q7g-Pw-fh6" firstAttribute="bottom" secondItem="AnO-hk-5kB" secondAttribute="bottom" id="Y1Z-VG-Ruu"/>
+                            <constraint firstItem="AnO-hk-5kB" firstAttribute="leading" secondItem="q7g-Pw-fh6" secondAttribute="leading" id="taz-Bo-Geb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Forecast" id="eP2-vJ-zyO">
                         <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" landscapeImage="arrow.clockwise" id="CJJ-Lo-Jvh" userLabel="Refresh"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="AnO-hk-5kB" id="CYb-yq-x3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wY7-3E-oZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,5 +146,8 @@
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="tab_forecast" width="25" height="25"/>
         <image name="tab_today" width="30" height="29"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
