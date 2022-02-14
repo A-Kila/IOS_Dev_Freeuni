@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ForecastViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+    
+    private let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,7 @@ class ForecastViewController: UIViewController {
         tableView.dataSource = self
         
         registerCells()
+        getWeatherInfo()
     }
     
     private func registerCells() {
@@ -25,7 +29,17 @@ class ForecastViewController: UIViewController {
             forCellReuseIdentifier: "ForecastCell"
         )
     }
-
+    
+    private func getWeatherInfo() {
+        let latitude = LocationManager.shared.latitude
+        let longitude = LocationManager.shared.longitude
+        
+        if let latitude = latitude, let longitude = longitude {
+            WeatherAPI.getForecast(latitude: latitude, longitude: longitude)
+        } else {
+            print("error Screen")
+        }
+    }
 }
 
 

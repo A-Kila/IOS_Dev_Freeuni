@@ -8,6 +8,7 @@
 import UIKit
 
 struct ForecastCellModel {
+    var imagePath: String? = nil
     var time: String
     var weather: String
     var temperature: Int
@@ -25,7 +26,9 @@ class ForecastCell: UITableViewCell {
     }
     
     func configure(with model: ForecastCellModel) {
-        weatherImage.image = UIImage.init(named: "data_load_error")
+        if model.imagePath != nil {
+            weatherImage.image = UIImage.init(named: model.imagePath!)
+        }
         time.text = model.time
         weather.text = model.weather
         temperature.text = "\(model.temperature)°C"
