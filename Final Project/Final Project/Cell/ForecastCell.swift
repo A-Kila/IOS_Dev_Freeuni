@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 struct ForecastCellModel {
     var imagePath: String? = nil
@@ -26,9 +27,10 @@ class ForecastCell: UITableViewCell {
     }
     
     func configure(with model: ForecastCellModel) {
-        if model.imagePath != nil {
-            weatherImage.image = UIImage.init(named: model.imagePath!)
+        if let imagePath = model.imagePath {
+            weatherImage.sd_setImage(with: URL(string: imagePath))
         }
+        
         time.text = model.time
         weather.text = model.weather
         temperature.text = "\(model.temperature)°C"

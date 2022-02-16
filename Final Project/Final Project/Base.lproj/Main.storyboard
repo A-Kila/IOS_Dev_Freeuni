@@ -117,23 +117,46 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="723"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCI-tw-QxM">
+                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2oE-Tf-p0f">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="806"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KlY-Ww-TTe">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q7g-Pw-fh6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="q7g-Pw-fh6" firstAttribute="trailing" secondItem="L0V-LN-0qS" secondAttribute="trailing" id="3Pg-M0-BrF"/>
                             <constraint firstItem="AnO-hk-5kB" firstAttribute="top" secondItem="L0V-LN-0qS" secondAttribute="bottom" id="7SN-kl-Sdn"/>
+                            <constraint firstItem="wCI-tw-QxM" firstAttribute="top" secondItem="L0V-LN-0qS" secondAttribute="bottom" id="AKO-Qu-hRS"/>
                             <constraint firstItem="q7g-Pw-fh6" firstAttribute="trailing" secondItem="AnO-hk-5kB" secondAttribute="trailing" id="D2L-Uu-aAh"/>
                             <constraint firstItem="L0V-LN-0qS" firstAttribute="top" secondItem="q7g-Pw-fh6" secondAttribute="top" id="EZX-7D-EKw"/>
+                            <constraint firstItem="wCI-tw-QxM" firstAttribute="leading" secondItem="ePf-9a-PT2" secondAttribute="leading" id="Onk-Fy-YSr"/>
                             <constraint firstItem="L0V-LN-0qS" firstAttribute="leading" secondItem="q7g-Pw-fh6" secondAttribute="leading" id="Owf-LS-Ndi"/>
+                            <constraint firstItem="KlY-Ww-TTe" firstAttribute="centerX" secondItem="ePf-9a-PT2" secondAttribute="centerX" id="Plu-Si-AI0"/>
                             <constraint firstItem="q7g-Pw-fh6" firstAttribute="bottom" secondItem="AnO-hk-5kB" secondAttribute="bottom" id="Y1Z-VG-Ruu"/>
+                            <constraint firstAttribute="bottom" secondItem="wCI-tw-QxM" secondAttribute="bottom" id="gug-QG-GcE"/>
+                            <constraint firstAttribute="trailing" secondItem="wCI-tw-QxM" secondAttribute="trailing" id="phQ-Ls-Sqv"/>
+                            <constraint firstItem="KlY-Ww-TTe" firstAttribute="centerY" secondItem="ePf-9a-PT2" secondAttribute="centerY" id="sOg-IC-MXI"/>
                             <constraint firstItem="AnO-hk-5kB" firstAttribute="leading" secondItem="q7g-Pw-fh6" secondAttribute="leading" id="taz-Bo-Geb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Forecast" id="eP2-vJ-zyO">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" landscapeImage="arrow.clockwise" id="CJJ-Lo-Jvh" userLabel="Refresh"/>
+                        <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" landscapeImage="arrow.clockwise" id="CJJ-Lo-Jvh" userLabel="Refresh">
+                            <connections>
+                                <action selector="refresh" destination="PCW-AY-eKC" id="cyg-lO-gdV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="blur" destination="wCI-tw-QxM" id="Se6-h0-1nS"/>
+                        <outlet property="loader" destination="KlY-Ww-TTe" id="FPd-sT-S9r"/>
                         <outlet property="tableView" destination="AnO-hk-5kB" id="CYb-yq-x3q"/>
                     </connections>
                 </viewController>
