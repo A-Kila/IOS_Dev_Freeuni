@@ -35,7 +35,7 @@ class ForecastViewController: RefreshableViewController {
     }
     
     override func didGetWeatherInfo<DataType>(result: DataType) {
-        super.didGetWeatherInfo(result: result )
+        super.didGetWeatherInfo(result: result)
         
         forecastData = result as! [ForecastSection]
         tableView.reloadData()

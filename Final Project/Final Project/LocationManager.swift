@@ -14,12 +14,15 @@ final class LocationManager: NSObject {
     
     var latitude: Double? = nil
     var longitude: Double? = nil
+    var status: CLAuthorizationStatus
     
     private var locationManager = CLLocationManager()
     
     private override init() {
-        super.init()
+        status = locationManager.authorizationStatus
         
+        super.init()
+    
         locationManager.delegate = self
         
         locationManager.requestWhenInUseAuthorization()
@@ -44,6 +47,10 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         longitude = nil
         latitude = nil
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        status = locationManager.authorizationStatus
     }
     
 }
