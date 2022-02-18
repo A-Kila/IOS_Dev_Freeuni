@@ -45,7 +45,8 @@ class RefreshableViewController: UIViewController, ErrorScreenViewDelegate {
         DispatchQueue.global().async {
             while (LocationManager.shared.status == .notDetermined) {}
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            
+            DispatchQueue.main.async {
                 self.getWeatherInfo(dataGetter: dataGetter)
             }
         }

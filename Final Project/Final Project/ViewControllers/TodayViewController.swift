@@ -29,6 +29,10 @@ class TodayViewController: RefreshableViewController {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var temperatureLabel: UILabel!
     
+    // Middle line
+    @IBOutlet var horizontalLine: UIView!
+    @IBOutlet var verticalLine: UIView!
+    
     // Down/Right half
     @IBOutlet var cloudLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
@@ -38,8 +42,17 @@ class TodayViewController: RefreshableViewController {
     
     override func viewDidLoad() {
         dataView = todayView
+        horizontalLine.isHidden = UIDevice.current.orientation.isLandscape
+        verticalLine.isHidden = UIDevice.current.orientation.isPortrait
         
         super.viewDidLoad()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        horizontalLine.isHidden = UIDevice.current.orientation.isLandscape
+        verticalLine.isHidden = UIDevice.current.orientation.isPortrait
+        
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
     override func refresh() {
@@ -59,6 +72,22 @@ class TodayViewController: RefreshableViewController {
         pressureLabel.text = "\(todayData.pressure) hPa"
         windLabel.text = "\(todayData.windSpeed) km/h"
         directionLabel.text = todayData.windDirection
+    }
+    
+    @IBAction func share() {
+        if errorScreenView.isHidden,
+            let location = locationLabel.text,
+            let temperature = temperatureLabel.text
+        {
+            let shareString = "\(location) - \(temperature)"
+            
+            let activityControllerView = UIActivityViewController(
+                activityItems: [shareString],
+                applicationActivities: nil
+            )
+            
+            present(activityControllerView, animated: true)
+        }
     }
 
 }

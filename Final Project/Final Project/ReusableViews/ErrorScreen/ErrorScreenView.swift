@@ -15,6 +15,10 @@ class ErrorScreenView: BaseReusableView {
     
     var delegate: ErrorScreenViewDelegate?
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
     @IBAction func refresh() {
         delegate?.refresh()
     }

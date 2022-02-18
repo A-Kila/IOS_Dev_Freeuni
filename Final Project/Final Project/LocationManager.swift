@@ -42,15 +42,13 @@ extension LocationManager: CLLocationManagerDelegate {
             self.latitude = latitude
             self.longitude = longitude
         }
+        
+        status = locationManager.authorizationStatus
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         longitude = nil
         latitude = nil
-    }
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        status = locationManager.authorizationStatus
     }
     
 }
